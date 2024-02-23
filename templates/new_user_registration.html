@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Labour Cloud</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{{url_for('static',filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+    <link href="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{{url_for('static',filename='assets/css/style.css')}}" rel="stylesheet">
+
+    <!-- =======================================================
+  * Template Name: Arsha - v4.7.1
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body background="static/assets/img/pop1.jpg">
+    {% include "sign_up.html" %}
+    <!-- ======= Header ======= -->
+
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+
+    <main id="main">
+        <section class="gradient-custom">
+            <div class="container py-5">
+                <div class="rowalign-items-center">
+                    <!-- <div class="col-12"> -->
+                        {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                            <strong>Message : </strong> {{ message }}
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        {% endfor %} {% endif %} {% endwith %}
+                        <div class="card shadow-2-strong card-registration"
+                            style="  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; overflow-y: scroll;">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">register now</h3>
+
+
+                                <form action="/user_registration" method="POST">
+
+                                    <div class="row">
+
+                                        <div class="col-sm">
+                                            <label for="exampleInputUsername">username</label>
+                                            <input type="text" name="username" value="" class="form-control"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="username here" required>
+                                        </div>
+                                        <div class="col-sm">
+                                            <label for="exampleInputUsername">password</label>
+                                            <div class="input-container">
+                                            <input type="password" name="password" value="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" class="form-control"
+                                            title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" id="password" aria-describedby="emailHelp"
+                                                placeholder="password here" required>
+                                                <button type="button" class="btn btn-primary" onclick="togglePasswordVisibility()">Show password</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="row">
+
+                                        <div class="col-sm">
+                                            <label for="exampleInputUsername">Name</label>
+                                            <input type="text" name="name" value="" class="form-control"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="Name" pattern="[A-Za-z\s]+"required>
+                                        </div>
+                                        <div class="col-sm">
+                                            <label for="exampleInputUsername">Gender</label>
+                                            <select name="gender" id="" class="form-control">
+                                                <option value="">select gender</option>
+                                                <option value="male">male</option>
+                                                <option value="female">female</option>
+                                                <option value="other">other</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <label for="exampleInputUsername">phone</label>
+                                            <input type="tel" name="phone" title="Enter a valid mobile number" maxlength="10" pattern="[789][0-9]{9}" class="form-control"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                placeholder="10 digit phone number" required>
+                                                <label style="font-size:9px;padding-left:20px"> 
+                                        </div>
+                                        <div class="col-sm">
+                                            <label for="exampleInputUsername">location</label>
+                                            <select name="location_reference" class="selectpicker form-control">
+                                                <option value="">select location</option>
+                                                {% for o in data %}
+                                                <option value="{{ o[0] }}">{{ o[1] }}</option>
+                                                {% endfor %}
+                                              </select>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <label for="exampleInputUsername">DOB</label>
+                                                <input type="date" min='1899-01-01' max='2050-13-13' class="form-control" name="dob"
+                                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="col-sm">
+                                                <label for="exampleInputUsername">Email</label>
+                                                <input type="email" name="email" value="" class="form-control" placeholder="abc@gmail.com"
+                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                    placeholder="email" required>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <label for="exampleInputUsername">Address</label>
+                                                
+                                                <textarea name="address" rows="3" value="" class="form-control"
+                                                 id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                    placeholder="Address" required></textarea>
+                                                
+                                            </div>
+                                            <div class="col-sm">
+                                                <label for="exampleInputUsername">Adhaar</label>
+                                                <input type="text" name="adhaar" value="" class="form-control"
+                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                    placeholder="adhaar" pattern="[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}"required >
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+
+
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="reset" class="btn btn-primary">Reset</button>
+
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function togglePasswordVisibility() {
+          var passwordInput = document.getElementById("password");
+          if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            document.querySelector('button').textContent = "Hide password";
+          } else {
+            passwordInput.type = "password";
+            document.querySelector('button').textContent = "Show password";
+          }
+        }
+        </script>
+    <footer>
+        <div id="preloader"></div>
+        <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+                class="bi bi-arrow-up-short"></i></a>
+
+        <!-- Vendor JS Files -->
+        <script src="{{url_for('static',filename='assets/vendor/aos/aos.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
+        <script src="{{url_for('static',filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+        <!-- Template Main JS File -->
+        <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>home</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{url_for('static',filename='assets/vendor/aos/aos.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/glightbox/css/glightbox.min.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link href="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{url_for('static',filename='assets/css/style.css')}}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Arsha - v4.7.1
+  * Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top" style="background-color: rgba(0, 0, 0, 0.9)">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a>Hello !</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+
+          <li><a class="nav-link scrollto" href="login">Login</a></li>
+        </ul>
+
+        <ul>
+
+          <li class="dropdown"><a href="#"><span>Sign Up</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="user_registration">Users</a></li>
+              <li><a href="new_labour"> Staff</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="justify-content-center img-2">
+    <div class="container">
+      <!-- <div class="row"> -->
+      <div class="text-center" class="justify-content-end pt-4 pt-lg-0 order-2 order-lg-1" data-aos="zoom-in"
+        data-aos-delay="200">
+        <h1>LABOUR CLOUD</h1>
+        <h4>FIND YOUR MOST NEEDY PERSON AT THE RIGHT TIME.</h4>
+      </div>
+      <!-- <div class="justify-content-center" data-aos="zoom-in" data-aos-delay="200">
+        <img src="static/assets/img/slider-img.jpg" class="img-overlay" alt="">
+      </div> -->
+    </div>
+  </section>
+
+
+  <!-- <section>
+    {%for row in feedback%}
+    
+    <p>{{row[1]}}</p>
+{%endfor%}
+
+  </section> -->
+
+  <div class="table-responsive" style="background-color: black;">
+    <table class="table table-borderless">
+      <tr>
+        {%for row in feedback%}
+        <td>
+          <section class="t-bq-section" id="horace">
+              <div class="t-bq-wrapper t-bq-wrapper-boxed">
+                  <div class="t-bq-quote t-bq-quote-horace">
+          
+                      <div class="t-bq-quote-horace-qmark">
+                          &#10078;
+                      </div>
+          
+          
+                      <div class="t-bq-quote-horace-base">
+                          <blockquote class="t-bq-quote-horace-text" cite="Strugatsky Brothers">
+          {{row[1]}}
+                          </blockquote>
+                          <div class="t-bq-quote-horace-meta">
+                              <div class="t-bq-quote-horace-userpic"></div>
+                              <!-- <div class="t-bq-quote-horace-meta-info">
+                                  <div class="t-bq-quote-horace-author"><cite>Strugatsky Brothers</cite></div>
+                                  <div class="t-bq-quote-horace-source"><span>Ugly Swans</span></div>
+                              </div> -->
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </section>
+        </td>
+        {%endfor%}
+      </tr>
+    </table>
+  </div>
+
+  <!-- info section -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info-logo">
+            <h2>
+              Labour Cloud
+            </h2>
+            <p>
+              We provide our best user friendly interface for smooth interaction with the users
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info-nav">
+            <h4>
+              Navigation
+            </h4>
+            <ul>
+              <li>
+                <a href="/">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="about.html">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="service.html">
+                  Services
+                </a>
+              </li>
+              <li>
+                <a href="user_registration">
+                  Sign Up
+                </a>
+              </li>
+              <li>
+                <a href="login">
+                  Login
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info-contact">
+            <h4>
+              Contact Info
+            </h4>
+            <div class="location">
+              <h6>
+                Corporate Office Address:
+              </h6>
+              <a href="">
+                <img src="images/location.png" alt="">
+                <span>
+                  St Pius X College,Rajapuram
+                </span>
+              </a>
+            </div>
+            <div class="call">
+              <h6>
+                Customer Service:
+              </h6>
+              <a href="mailto:labourcloud1234@gmail.com">
+                <img src="" alt="">
+                <span>
+                  labourcloud1234@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="discover">
+            <h4>
+              Discover
+            </h4>
+            <ul>
+              <li>
+                <a href="">
+                  Help
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  How It Works
+
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  subscribe
+                </a>
+              </li>
+              <li>
+                <a href="contact.html">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+            <div class="social-box">
+              <a href="">
+                <img src="{{url_for('static',filename='images/facebook.png')}}" alt="">
+              </a>
+              <a href="">
+                <img src="{{url_for('static',filename='images/twitter.png')}}" alt="">
+              </a>
+              <a href="">
+                <img src="{{url_for('static',filename='images/google-plus.png')}}" alt="">
+              </a>
+              <a href="">
+                <img src="{{url_for('static',filename='images/linkedin.png')}}" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2022 All Rights Reserved By
+      <a href="https://html.design/">Labour Cloud</a>
+    </p>
+  </section>
+  <!-- footer section -->
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="{{url_for('static',filename='assets/vendor/aos/aos.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/vendor/waypoints/noframework.waypoints.js')}}"></script>
+  <script src="{{url_for('static',filename='assets/vendor/php-email-form/validate.js')}}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{url_for('static',filename='assets/js/main.js')}}"></script>
+
+</body>
+
+</html>
